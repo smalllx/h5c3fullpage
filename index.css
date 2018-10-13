@@ -47,7 +47,7 @@
     bottom: 0;
     left:50%;
     margin-left: -450px;
-    border:1px solid #ccc;
+    /*border:1px solid #ccc;*/
 }
 /*第一页的样式*/
 .section01{
@@ -587,10 +587,79 @@
     /*注意一点：不同同样的属性状态改变*/
     transition: transform 0.5s linear 7s,right 0.5s linear 7s;
 }
+/*第7屏*/
 .section07{
-    background: url("img/07-bg.png") no-repeat left bottom;
+    background: url("img/07-bg.png") no-repeat center bottom;
+}
+.section07 .star{
+    position: absolute;
+    left: 157px;
+    top: 141px;
+    z-index: 9999;
+}
+.section07 .star img{
+    float: left;
+    margin-right: 6px;
+    /*display: none;*/
+    opacity: 0;
+}
+.section07 .star.show img{
+    opacity: 1;
+    transition: all 0.3s linear;
+}
+.section07 .text{
+    position: absolute;
+    left: 157px;
+    top: 180px;
+    opacity: 0;
+    transform-origin: left bottom;
+    transform: scale(0);
+}
+.section07 .text.show{
+    opacity: 1;
+/*    transform: none;
+    transition: all 1s linear 2.3s;*/
+    animation: text07 1.5s linear 2.3s forwards;
+}
+@keyframes text07 {
+    from{}
+    70%{
+        transform: scale(1.2);
+    }
+    to{
+        transform: none;
+    }
 }
 
+/*第8屏*/
 .section08{
-    background: url("img/08-bg.png") center bottom;
+    background: url("img/08-bg.png");
+}
+.section08 .btn{
+    width: 389px;
+    height: 160px;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.section08 .btn img:last-child{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.section08 .btn:hover img:last-child{
+    opacity: 1;
+}
+.section08 .again{
+    position: absolute;
+    right: 0;
+    top: 80px;
+}
+.section08 .hand{
+    position: absolute;
+    left:50%;
+    top: 100px;
+    transform: translateX(-50%);
+    /*margin-left:-85px;*/
 }
